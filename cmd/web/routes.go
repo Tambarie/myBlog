@@ -1,9 +1,13 @@
 package main
 
-import "net/http"
+import (
+	"github.com/go-chi/chi/v5"
+	"net/http"
+)
 
-func (app *application) routes() *http.ServeMux  {
-	mux := http.NewServeMux()
+func (app *application) routes() *chi.Mux {
+	mux := chi.NewRouter()
+	//mux := http.NewServeMux()
 	mux.HandleFunc("/", app.homepage)
 	mux.HandleFunc("/createForm", app.create)
 

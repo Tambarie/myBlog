@@ -12,10 +12,10 @@ func (app *application) homepage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	templateFiles := []string{
-		"../../ui/html/home.page.html",
-		"../../ui/html/base.layout.html",
-		"../../ui/html/footer.partial.html",
-		"../../ui/html/create.page.html",
+		"./ui/html/home.page.html",
+		"./ui/html/base.layout.html",
+		"./ui/html/footer.partial.html",
+		"./ui/html/create.page.html",
 	}
 	ts, err := template.ParseFiles(templateFiles...)
 	if err != nil {
@@ -38,10 +38,10 @@ func (app *application) create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	templateFiles := []string{
-		"../../ui/html/create.page.html",
-		"../../ui/html/base.layout.html",
-		"../../ui/html/home.page.html",
-		"../../ui/html/footer.partial.html",
+		"./ui/html/create.page.html",
+		"./ui/html/base.layout.html",
+		"./ui/html/home.page.html",
+		"./ui/html/footer.partial.html",
 	}
 	ts, err := template.ParseFiles(templateFiles...)
 	if err != nil {
