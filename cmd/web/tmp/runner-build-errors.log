@@ -1,0 +1,2 @@
+# github.com/Tambarie/myBlog/cmd/web
+./controllers.go:76:2: syntax error: unexpected }, expecting expression

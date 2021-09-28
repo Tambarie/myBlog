@@ -12,6 +12,7 @@ type application struct {
 	infoLog *log.Logger
 }
 
+
 func main()  {
 	addr := flag.String("addr",":8000","Pass the network address")
 	flag.Parse()
@@ -37,5 +38,4 @@ func main()  {
 	if err := server.ListenAndServe(); err != nil{
 		errLog.Fatal(err)
 	}
-
 }

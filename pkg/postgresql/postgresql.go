@@ -3,9 +3,9 @@ package postgresql
 import (
 	"database/sql"
 	"fmt"
+	_ "github.com/lib/pq"
 )
 
-func Db() *sql.DB {
 	const (
 		host = "localhost"
 		port =5432
@@ -13,6 +13,17 @@ func Db() *sql.DB {
 		dbname = "tambarie"
 	)
 
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=disable",host,port,user,dbname)
+var Db *sql.DB
+func init()  {
 
+	var psqlInfo = fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=disable",host,port,user,dbname)
+	var err error
+	 Db ,err = sql.Open("postgres",psqlInfo)
+	 if err != nil{
+		 return
+	 }
 }
+
+
+
+

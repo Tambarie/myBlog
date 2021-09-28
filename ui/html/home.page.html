@@ -4,7 +4,22 @@
 Golang
 {{end}}
 
-{{define "main"}}
+{{define "main" }}
 <h1>News Feed</h1>
+{{range .}}
+
+<h3>
+    {{.Author}}
+</h3>
+<h3>
+    {{.Title}}
+</h3>
+<h3>{{.Body}}</h3>
+<h3>{{.Time}}</h3>
+<a href="/{{.ID}}/edit" type="submit">Edit</a>
+<a href="/{{.ID}}/delete" type="submit">Delete</a>
+
+{{end}}
+
 <p>Articles</p>
 {{end}}

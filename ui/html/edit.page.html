@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/{{.ID}}/updatePost" method="post">
+    <label for="author">Author</label><br>
+    <input type="text" id="author" name="author" value={{.Author}} ><br>
+    <label for="title">Title of Article</label><br>
+    <input type="text" id="title" name="title"  value={{.Title}}> <br>
+    <label for="article">Article</label><br>
+    <textarea name="article" id="article">{{.Body}}</textarea>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
